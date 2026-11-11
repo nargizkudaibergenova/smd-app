@@ -1,1 +1,5 @@
 # smd-app
+
+## Author
+
+nargizkudaibergenova

@@ -21,11 +21,7 @@ def totals_by(
 
 def is_spending(t: Transaction) -> bool:
     """Money that left the accounts: negative, and not a transfer between them."""
-    # TODO 1: return True when the amount is negative and the category is not
-    #         TRANSFER, and False otherwise.
-    if t.amount < 0 and t.category != TRANSFER:
-        return True
-    return False
+    return t.amount < 0 and t.category != TRANSFER
 
 
 def balances(transactions: Iterable[Transaction]) -> dict[str, Decimal]:
@@ -48,4 +44,4 @@ def net_by_month(transactions: Iterable[Transaction]) -> dict[str, Decimal]:
     # TODO 3: add up all the amounts of each month, transfers included.
     #         t.date.strftime("%Y-%m") gives the month of a transaction as text.
     totals = totals_by(transactions, key=lambda t: t.date.strftime("%Y-%m"))
-    return dict(sorted(totals.items())) 
+    return dict(sorted(totals.items()))

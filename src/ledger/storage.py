@@ -5,11 +5,11 @@ from datetime import date
 from decimal import Decimal
 from pathlib import Path
 
-from ledger.models import Transaction
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from ledger.db import Account, TransactionRow
+from ledger.models import Transaction
 
 
 def read_csv(path: Path) -> list[Transaction]:
